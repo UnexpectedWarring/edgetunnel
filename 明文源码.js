@@ -11,7 +11,7 @@ let subEmoji = 'true';
 let socks5Address = '';
 let parsedSocks5Address = {}; 
 let enableSocks = false;
-let spasswd = env.SPASSWD || '1QAZ';
+let spasswd = '1QAZ';
 let fakeUserID ;
 let fakeHostName ;
 let noTLS = 'false'; 
@@ -1221,6 +1221,7 @@ const cmad = decodeURIComponent(atob('dGVsZWdyYW0lMjAlRTQlQkElQTQlRTYlQjUlODElRT
  * @returns {Promise<string>}
  */
 async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, env) {
+	spasswd = env.SPASSWD || '1QAZ';
 	if (sub) {
 		const match = sub.match(/^(?:https?:\/\/)?([^\/]+)/);
 		if (match) {
